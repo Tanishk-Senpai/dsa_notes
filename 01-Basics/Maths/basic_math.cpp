@@ -35,7 +35,7 @@ int reverseNumber(int n)
     cout << rev;
 }
 
-int checkPalindrom(int n)
+int checkPalindrome(int n)
 {
     int rev = 0;
     int x = n;
@@ -54,10 +54,12 @@ int checkPalindrom(int n)
 int amstrongNumber(int n)
 {
     int sum = 0;
+    string s = to_string(n); // convert the integer to string
+    int no_of_digits = s.lenght();
     while (n > 0)
     {
         int ld = n % 10;
-        sum = sum + (ld * ld * ld);
+        sum = sum + (ld ** no_of_digits);
         n = n / 10;
     }
     cout << sum;
@@ -113,7 +115,7 @@ int gcdAndHcf(int n1, int n2)
     }
     return gcd;
 }
-
+// euclidean algorithm -> gcd(a,b) = gcd(a-b,b) {a>b}
 int euclideanAlgo(int a,int b){
     while (a>0 & b>0)
     {
